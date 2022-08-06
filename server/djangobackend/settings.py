@@ -26,8 +26,7 @@ DEBUG = True
 
 APPEND_SLASH = True
 
-ALLOWED_HOSTS = ["localhost",'localhost:8000','alvaro-001.mybluemix.net']
-# ALLOWED_HOSTS = ["localhost",'localhost:8000','alvaro-001.mybluemix.net','cognitiveclass.ai']
+ALLOWED_HOSTS = ["localhost",'localhost:8000','jfc.mybluemix.net']
 # CSRF_TRUSTED_ORIGINS = ['cognitiveclass.ai']
 
 # Application definition
