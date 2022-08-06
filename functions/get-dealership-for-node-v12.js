@@ -1,5 +1,4 @@
 // IBM Action, method=GET, node.js v12
-// API https://4ea3b251.us-south.apigw.appdomain.cloud/api (for node v16)
 // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 const Cloudant = require('@cloudant/cloudant'); 
@@ -7,9 +6,9 @@ const Cloudant = require('@cloudant/cloudant');
 function main(params) {
 
     secret={
-    "COUCH_URL": "https://ab9a3133-c458-4795-8041-55b2ad164a33-bluemix.cloudantnosqldb.appdomain.cloud",
-    "IAM_API_KEY": "Um1oyQP-JDmtWBQc90jbhv1EEz2-VgjSqkK-RIcpOkZe",
-    "COUCH_USERNAME": "ab9a3133-c458-4795-8041-55b2ad164a33-bluemix"}
+    "COUCH_URL": "https://20c446e9-b7d6-47c4-9aba-260d13815831-bluemix.cloudantnosqldb.appdomain.cloud",
+    "IAM_API_KEY": "ng9v3anfOCobH63DPcohiQERqqu4Bdcm-oXVH40ntjU5",
+    "COUCH_USERNAME": "20c446e9-b7d6-47c4-9aba-260d13815831-bluemix"}
 
     return new Promise(function (resolve, reject) {
     const cloudant = Cloudant({
