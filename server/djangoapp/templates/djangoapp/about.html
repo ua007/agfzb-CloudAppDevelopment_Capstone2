@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <title>Dealership Review</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -13,22 +14,50 @@
 
 </head>
 
-{% include 'Navbar.html' %}
-<div class="container">
-    <p class="heading-txt" style="font-size: 2em; margin-bottom: 3%; text-align: center;">About Us</p>
-    <div style="margin-top: 5%;display: flex; justify-content: space-evenly; flex-wrap: wrap;">
-    <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+    <body>
+    <!-- Remove this line the first time you edit this file -->
 
+    <!--Add a nav bar here -->
 
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                Welcome to Best Cars dealership, home to the best cars in North America.
-                We sell very good domestic and imported cars at reasonable prices. Whatever you want, we can provide you!
-                Feel free to contact us for more informations!
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Dealership Review</a>
             </div>
+            <ul class="nav navbar navbar-right">
+                <li class="pr-5">
+                    <a class="text-dark" href="{% url 'djangoapp:index' %}">Home</a>
+                </li>
+                <li class="pr-5">
+                    <a class="text-dark" href="{% url 'djangoapp:about' %}">About Us</a>
+                </li>
+                <li class="pr-5">
+                    <a class="text-dark" href="{% url 'djangoapp:contact' %}">Contact Us</a>
+                </li>
+                {% if user.is_authenticated %}
+                <li>
+                    <a class="btn btn-link" href="#">{{ user.first_name }}({{ user.username }})</a>
+                    <a class="btn btn-link" href="{% url 'djangoapp:logout' %}">Logout</a>
+                </li>
+                {% else %}
+                <li>
+                    <form class="form-inline" action="{% url 'djangoapp:login' %}" method="post">
+                        {% csrf_token %}
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Username" name="username" >
+                            <input type="password" class="form-control" placeholder="Password" name="psw" >
+                            <button class="btn btn-primary" type="submit">Login</button>
+                            <a class="btn btn-link" href="{% url 'djangoapp:registration' %}">Sign Up</a>
+                        </div>
+                    </form>
+                </li>
+                {% endif %}
+            </ul>
         </div>
-    </div>
+    </nav>
+        <h1>
+            Welcome to Best Cars dealership, home to the best cars in North America. We sell domestic and imported cars at reasonable prices.
+        </h1>
 
     </body>
 
